@@ -1,0 +1,33 @@
+﻿{
+  "name": "qaddumi-api",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "build": "echo No build step needed for Node.js",
+    "lint": "eslint src --ext js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "@supabase/supabase-js": "^2.38.4",
+    "dotenv": "^16.3.1",
+    "pino": "^8.16.2",
+    "pino-pretty": "^10.2.3",
+    "express-pino-logger": "^7.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.32.6",
+    "joi": "^17.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "eslint": "^8.53.0"
+  }
+}

@@ -1,0 +1,237 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import Cairo font for Arabic */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Cairo', 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  [dir="rtl"] .rtl-flip {
+    transform: scaleX(-1);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+
+  /* Focus styles for accessibility */
+  .focus\:outline-qaddumi:focus {
+    outline: 2px solid #E5C779;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Button Components */
+  .btn-primary {
+    @apply bg-qaddumi-gold hover:bg-qaddumi-gold-dark text-qaddumi-charcoal font-medium px-6 py-3 rounded-lg transition-colors duration-200 focus:outline-qaddumi focus:ring-2 focus:ring-qaddumi-gold focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium px-6 py-3 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply border-2 border-qaddumi-gold text-qaddumi-gold hover:bg-qaddumi-gold hover:text-qaddumi-charcoal font-medium px-6 py-3 rounded-lg transition-colors duration-200;
+  }
+
+  /* Card Components */
+  .card {
+    @apply bg-white rounded-lg shadow-soft p-6;
+  }
+
+  .card-hover {
+    @apply bg-white rounded-lg shadow-soft hover:shadow-soft-lg transition-shadow duration-300 p-6;
+  }
+
+  /* Product Card */
+  .product-card {
+    @apply bg-white rounded-lg shadow-soft hover:shadow-soft-lg transition-all duration-300 overflow-hidden group;
+  }
+
+  /* Form Components */
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-qaddumi-gold focus:border-qaddumi-gold transition-colors duration-200;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply text-gray-700 hover:text-qaddumi-gold font-medium transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-qaddumi-gold font-semibold;
+  }
+
+  /* Price Display */
+  .price-current {
+    @apply text-2xl font-bold text-qaddumi-gold;
+  }
+
+  .price-original {
+    @apply text-lg text-gray-500 line-through;
+  }
+
+  .price-sale {
+    @apply text-lg font-semibold text-red-600;
+  }
+
+  /* Badge Components */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-success {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .badge-warning {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .badge-danger {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .badge-info {
+    @apply bg-blue-100 text-blue-800;
+  }
+
+  .badge-qaddumi {
+    @apply bg-qaddumi-gold text-qaddumi-charcoal;
+  }
+
+  /* Loading Animations */
+  .animate-pulse-gentle {
+    animation: pulse-gentle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-gentle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .7;
+    }
+  }
+
+  /* Skeleton Loading */
+  .skeleton {
+    @apply bg-gray-200 animate-pulse rounded;
+  }
+
+  .skeleton-text {
+    @apply h-4 bg-gray-200 rounded animate-pulse;
+  }
+
+  .skeleton-avatar {
+    @apply w-10 h-10 bg-gray-200 rounded-full animate-pulse;
+  }
+
+  /* Image Styles */
+  .img-responsive {
+    @apply w-full h-auto object-cover;
+  }
+
+  .img-aspect-square {
+    @apply aspect-square object-cover;
+  }
+
+  .img-aspect-video {
+    @apply aspect-video object-cover;
+  }
+
+  /* Container Utilities */
+  .container-qaddumi {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Text Utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradient Backgrounds */
+  .bg-gradient-qaddumi {
+    background: linear-gradient(135deg, #E5C779 0%, #AF8D48 100%);
+  }
+
+  .bg-gradient-qaddumi-dark {
+    background: linear-gradient(135deg, #AF8D48 0%, #8B6914 100%);
+  }
+}
+
+@layer utilities {
+  /* RTL Utilities */
+  .rtl\:ml-auto[dir="rtl"] {
+    margin-left: auto;
+  }
+  
+  .rtl\:mr-auto[dir="rtl"] {
+    margin-right: auto;
+  }
+
+  .rtl\:text-left[dir="rtl"] {
+    text-align: left;
+  }
+
+  .rtl\:text-right[dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Animation Delays */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}

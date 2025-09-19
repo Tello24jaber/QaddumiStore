@@ -1,0 +1,54 @@
+# Node.js dependencies
+node_modules/
+
+# Build output
+/dist/
+/build/
+
+# Vite output
+web/dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Environment files
+.env*
+
+# Misc
+*.tmp
+*.swp
+
+# Supabase generated files
+supabase/.temp/
+
+# Ignore public images if not needed for versioning
+web/public/images/
+
+# Ignore compiled CSS if generated
+web/src/styles/*.css
+
+# Ignore package-lock and yarn.lock if using pnpm
+package-lock.json
+yarn.lock
+
+# Ignore test coverage
+coverage/
+
+# Ignore local config
+supabase/config.toml
+
+# Ignore migration and seed files if not needed
+supabase/migrations.sql
+supabase/seed.sql
