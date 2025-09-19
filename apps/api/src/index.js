@@ -3,7 +3,6 @@ import cors from 'cors'
 import helmet from 'helmet'
 import compression from 'compression'
 import rateLimit from 'express-rate-limit'
-import { config } from 'dotenv'
 import pino from 'pino'
 import expressPino from 'express-pino-logger'
 
@@ -22,9 +21,6 @@ import adminMediaRoutes from './routes/admin/media.js'
 import { authMiddleware } from './middleware/auth.js'
 import { errorHandler } from './middleware/errorHandler.js'
 import { corsMiddleware } from './middleware/cors.js'
-
-// Load environment variables
-config()
 
 // Initialize logger
 const logger = pino({
