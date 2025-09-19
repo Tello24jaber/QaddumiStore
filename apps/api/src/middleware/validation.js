@@ -89,6 +89,18 @@ export const parseFilters = (req, res, next) => {
   next()
 }
 
+// Validate request body against schema
+export const validateBody = (schema) => {
+  return (req, res, next) => {
+    const { error, value } = schema.validate(req.body)
+    if (error) {
+      throw new ValidationError(error.details[0].message)
+    }
+    req.validatedBody = value
+    next()
+  }
+}
+
 // Request logging middleware
 export const requestLogger = (req, res, next) => {
   const start = Date.now()
